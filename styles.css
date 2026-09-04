@@ -869,10 +869,15 @@ body {
 }
 
 .spotify-mini-svg {
-  width: 15px;
-  height: 15px;
+  width: 15px !important;
+  max-width: 15px !important;
+  min-width: 15px !important;
+  height: 15px !important;
+  max-height: 15px !important;
   color: #1ed760;
-  transition: color 0.2s ease;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .episode-spotify-btn:hover .spotify-mini-svg {

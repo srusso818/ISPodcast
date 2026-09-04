@@ -488,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h4 class="episode-title">${escapeHtml(title)}</h4>
           </div>
           <a href="${link}" target="_blank" rel="noopener noreferrer" class="episode-spotify-btn" aria-label="Listen to ${escapeHtml(title)} on Spotify">
-            <svg viewBox="0 0 24 24" class="spotify-mini-svg" fill="currentColor">
+            <svg width="16" height="16" viewBox="0 0 24 24" class="spotify-mini-svg" fill="currentColor">
               <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.307a.754.754 0 0 1-1.037.25c-2.836-1.733-6.406-2.126-10.61-1.165a.755.755 0 0 1-.34-1.472c4.604-1.05 8.56-.607 11.737 1.349a.754.754 0 0 1 .25 1.038zm1.467-3.26a.944.944 0 0 1-1.298.312c-3.248-1.996-8.2-2.576-12.043-1.41a.944.944 0 1 1-.55-1.805c4.39-1.332 9.858-.688 13.58 1.603a.944.944 0 0 1 .311 1.3zM19.1 11.2C15.23 8.9 8.85 8.69 5.15 9.81a1.132 1.132 0 1 1-.66-2.164c4.25-1.29 11.3-.99 15.75 1.65a1.132 1.132 0 1 1-1.14 1.954z"/>
             </svg>
             <span>Listen</span>
