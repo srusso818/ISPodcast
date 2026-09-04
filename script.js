@@ -236,84 +236,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Teaser Ambient Tone Loop
-  let teaserOscillators = [];
-  function startTeaserAudio() {
-    try {
-      const ctx = getAudioContext();
-      if (!ctx) return;
-      
-      const freqs = [146.83, 220.00, 293.66, 369.99]; // D3, A3, D4, F#4 (Warm Gold D Major Chord)
-      const masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0.001, ctx.currentTime);
-      masterGain.gain.exponentialRampToValueAtTime(0.05, ctx.currentTime + 1.2);
-      masterGain.connect(ctx.destination);
-
-      teaserOscillators = freqs.map((f, index) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.type = index % 2 === 0 ? 'sine' : 'triangle';
-        osc.frequency.setValueAtTime(f, ctx.currentTime);
-        gain.gain.setValueAtTime(0.3, ctx.currentTime);
-        osc.connect(gain);
-        gain.connect(masterGain);
-        osc.start();
-        return osc;
-      });
-      teaserOscillators.masterGain = masterGain;
-    } catch (e) {
-      console.warn('Audio preview restricted');
-    }
-  }
-
-  function stopTeaserAudio() {
-    if (teaserOscillators && teaserOscillators.length) {
-      try {
-        const ctx = getAudioContext();
-        if (ctx && teaserOscillators.masterGain) {
-          teaserOscillators.masterGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.4);
-          setTimeout(() => {
-            teaserOscillators.forEach(osc => osc.stop());
-            teaserOscillators = [];
-          }, 450);
-        }
-      } catch (e) {
-        teaserOscillators = [];
-      }
-    }
-  }
+  // =========================================================================
+  // REAL AUDIO TRAILER PLAYER (The Staircase w-music - emotional ambient.mp3)
+  // =========================================================================
+  const teaserAudio = document.getElementById('teaser-audio');
 
   function formatTime(secs) {
+    if (isNaN(secs) || secs < 0) return '0:00';
     const m = Math.floor(secs / 60);
     const s = Math.floor(secs % 60);
     return `${m}:${s < 10 ? '0' : ''}${s}`;
   }
 
-  if (playBtn) {
-    playBtn.addEventListener('click', () => {
-      isPlaying = !isPlaying;
+  function updateTimer() {
+    if (!teaserAudio || !playerTimer) return;
+    const current = teaserAudio.currentTime || 0;
+    const duration = teaserAudio.duration || 0;
+    playerTimer.textContent = `${formatTime(current)} / ${formatTime(duration)}`;
+  }
 
-      if (isPlaying) {
-        playSvg.classList.add('hidden');
-        pauseSvg.classList.remove('hidden');
-        waveBars.forEach(b => b.classList.add('active'));
-        startTeaserAudio();
+  if (teaserAudio) {
+    teaserAudio.addEventListener('loadedmetadata', updateTimer);
+    teaserAudio.addEventListener('durationchange', updateTimer);
+    teaserAudio.addEventListener('timeupdate', updateTimer);
+    teaserAudio.addEventListener('ended', () => {
+      isPlaying = false;
+      playSvg.classList.remove('hidden');
+      pauseSvg.classList.add('hidden');
+      waveBars.forEach(b => b.classList.remove('active'));
+      teaserAudio.currentTime = 0;
+      updateTimer();
+    });
+  }
 
-        playInterval = setInterval(() => {
-          currentSeconds++;
-          if (currentSeconds > TOTAL_SECONDS) {
-            currentSeconds = 0;
-          }
-          playerTimer.textContent = `${formatTime(currentSeconds)} / ${formatTime(TOTAL_SECONDS)}`;
-        }, 1000);
-
-        showToast('Now Playing: Imperfect Servant Teaser Preview');
+  if (playBtn && teaserAudio) {
+    playBtn.addEventListener('click', async () => {
+      if (teaserAudio.paused) {
+        try {
+          await teaserAudio.play();
+          isPlaying = true;
+          playSvg.classList.add('hidden');
+          pauseSvg.classList.remove('hidden');
+          waveBars.forEach(b => b.classList.add('active'));
+          showToast('Now Playing: Trailer Preview');
+        } catch (err) {
+          console.warn('Audio play error:', err);
+        }
       } else {
+        teaserAudio.pause();
+        isPlaying = false;
         playSvg.classList.remove('hidden');
         pauseSvg.classList.add('hidden');
         waveBars.forEach(b => b.classList.remove('active'));
-        stopTeaserAudio();
-        clearInterval(playInterval);
       }
     });
   }
@@ -325,8 +299,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (soundLabel) {
         soundLabel.textContent = isAudioEnabled ? 'Audio On' : 'Muted';
       }
-      if (!isAudioEnabled && isPlaying) {
-        playBtn.click();
+      if (teaserAudio) {
+        teaserAudio.muted = !isAudioEnabled;
       }
       showToast(isAudioEnabled ? 'Sound enabled' : 'Sound muted', 2000);
     });
