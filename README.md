@@ -47,8 +47,8 @@ Official placeholder website for the **Imperfect Servant Podcast** ("*Not Perfec
 ## How to Update Links
 
 All social and podcast links are located directly in [index.html](index.html):
-- **YouTube**: search for `https://www.youtube.com/@imperfectservantpodcast`
-- **Spotify**: search for `https://open.spotify.com/search/imperfectservantpodcast`
-- **Apple Podcasts**: search for `https://podcasts.apple.com/search?term=imperfectservantpodcast`
-- **iHeartRadio**: search for `https://www.iheart.com/search/?q=imperfect%20servant%20podcast`
-- **Email**: search for `imperfectservantpodcast@gmail.com`
+- **YouTube**: `https://www.youtube.com/@imperfectservantpodcast`
+- **Spotify**: `https://open.spotify.com/show/0347HogZFHvFF3vYagjIBq`
+- **Apple Podcasts**: `https://podcasts.apple.com/us/podcast/imperfect-servant-podcast/id6802761640`
+- **iHeartRadio**: `https://www.iheart.com/podcast/269-imperfect-servant-podcast-341580091`
+- **Email**: `imperfectservantpodcast@gmail.com`
