@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imperfect Servant Podcast | Not Perfect. Just Willing.</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Imperfect Servant Podcast - Improving Health, Strengthening Faith, Growth Through Christ, and Finding Your Purpose. Not perfect. Just willing.">
+  <meta name="keywords" content="Imperfect Servant Podcast, Christian Podcast, Health and Faith, Spiritual Growth, Purpose, Romans 14:14, Leviticus 3:16">
+  <meta name="author" content="Imperfect Servant Podcast">
+  
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Imperfect Servant Podcast | Not Perfect. Just Willing.">
+  <meta property="og:description" content="Improving Health, Strengthening Faith, Growth Through Christ, Finding Your Purpose. Listen on YouTube, Spotify, Apple Podcasts, and iHeartRadio.">
+  <meta property="og:image" content="assets/ISPodcast%20Ttitle%20Screen%20NAVY.PNG">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Imperfect Servant Podcast">
+  <meta name="twitter:description" content="Not Perfect. Just Willing. Improving the health of God's children.">
+  <meta name="twitter:image" content="assets/ISPodcast%20Ttitle%20Screen%20NAVY.PNG">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="assets/ISPodcast%20Ttitle%20Screen%20NAVY.PNG">
+</head>
+<body>
+  <!-- Ambient Gold Light Flares & Canvas Background -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Announcement Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="brand-badge">
+        <span class="live-dot"></span>
+        <span class="brand-subtext">OFFICIAL PODCAST PLACEHOLDER</span>
+      </div>
+      
+      <div class="header-actions">
+        <button id="share-btn" class="header-btn" title="Share website">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+          </svg>
+          <span>Share Show</span>
+        </button>
+        <button id="sound-toggle-btn" class="header-btn" title="Toggle ambient sound">
+          <svg id="sound-icon-on" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+          </svg>
+          <span id="sound-label">Audio On</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- Hero Title Screen Section -->
+    <section class="artwork-hero-section">
+      <div class="artwork-wrapper">
+        <div class="artwork-frame">
+          <!-- Main High-Res Title Screen Image -->
+          <img 
+            id="title-screen-img"
+            src="assets/ISPodcast%20Ttitle%20Screen%20NAVY.PNG" 
+            alt="Imperfect Servant Podcast - Not Perfect. Just Willing. Romans 14:14, Leviticus 3:16"
+            width="1536"
+            height="1024"
+            loading="eager"
+          />
+
+          <!-- Interactive Hotspot Overlay Layer (Exact Pixel Percentages) -->
+          <div class="hotspots-overlay" aria-label="Interactive artwork icons">
+            
+            <!-- YouTube Hotspot -->
+            <a 
+              href="https://www.youtube.com/@imperfectservantpodcast" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hotspot hotspot-youtube"
+              id="hotspot-youtube"
+              data-platform="YouTube"
+              aria-label="Visit Imperfect Servant Podcast on YouTube"
+              title="Watch on YouTube (@imperfectservantpodcast)"
+            >
+              <span class="hotspot-ping"></span>
+              <span class="tooltip">Watch on YouTube</span>
+            </a>
+
+            <!-- Spotify Hotspot -->
+            <a 
+              href="https://open.spotify.com/search/imperfectservantpodcast" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hotspot hotspot-spotify"
+              id="hotspot-spotify"
+              data-platform="Spotify"
+              aria-label="Listen to Imperfect Servant Podcast on Spotify"
+              title="Listen on Spotify"
+            >
+              <span class="hotspot-ping"></span>
+              <span class="tooltip">Listen on Spotify</span>
+            </a>
+
+            <!-- Apple Podcasts Hotspot -->
+            <a 
+              href="https://podcasts.apple.com/search?term=imperfectservantpodcast" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hotspot hotspot-apple"
+              id="hotspot-apple"
+              data-platform="Apple Podcasts"
+              aria-label="Listen on Apple Podcasts"
+              title="Listen on Apple Podcasts"
+            >
+              <span class="hotspot-ping"></span>
+              <span class="tooltip">Listen on Apple Podcasts</span>
+            </a>
+
+            <!-- iHeartRadio Hotspot -->
+            <a 
+              href="https://www.iheart.com/search/?q=imperfect%20servant%20podcast" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hotspot hotspot-iheart"
+              id="hotspot-iheart"
+              data-platform="iHeartRadio"
+              aria-label="Listen on iHeartRadio"
+              title="Listen on iHeartRadio"
+            >
+              <span class="hotspot-ping"></span>
+              <span class="tooltip">Listen on iHeartRadio</span>
+            </a>
+
+            <!-- Social Handle Hotspot -->
+            <a 
+              href="https://www.youtube.com/@imperfectservantpodcast" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hotspot hotspot-handle"
+              id="hotspot-handle"
+              data-platform="Handle"
+              aria-label="Social Handle @imperfectservantpodcast"
+              title="Follow @imperfectservantpodcast"
+            >
+              <span class="tooltip">Follow @imperfectservantpodcast</span>
+            </a>
+
+            <!-- Center Motto Badge Hotspot -->
+            <button 
+              type="button"
+              class="hotspot hotspot-badge"
+              id="hotspot-badge"
+              data-action="motto-info"
+              aria-label="Read our mission: Not Perfect. Just Willing."
+              title="Our Mission: Not Perfect. Just Willing."
+            >
+              <span class="tooltip">Our Mission & Calling</span>
+            </button>
+
+            <!-- Email Text Hotspot -->
+            <a 
+              href="mailto:imperfectservantpodcast@gmail.com" 
+              class="hotspot hotspot-email-text"
+              id="hotspot-email-text"
+              data-action="copy-email"
+              aria-label="Email the show at imperfectservantpodcast@gmail.com"
+              title="Click to copy & email the show"
+            >
+              <span class="tooltip">Email: imperfectservantpodcast@gmail.com (Click to copy)</span>
+            </a>
+
+            <!-- Email Envelope Icon Hotspot -->
+            <a 
+              href="mailto:imperfectservantpodcast@gmail.com" 
+              class="hotspot hotspot-email-icon"
+              id="hotspot-email-icon"
+              data-action="copy-email"
+              aria-label="Send email to Imperfect Servant Podcast"
+              title="Email the Show (Click to copy)"
+            >
+              <span class="hotspot-ping"></span>
+              <span class="tooltip">Send Email (Click to copy)</span>
+            </a>
+
+            <!-- Scripture: Romans 14:14 -->
+            <button 
+              type="button"
+              class="hotspot hotspot-romans"
+              id="hotspot-romans"
+              data-scripture="romans"
+              aria-label="Read Romans 14:14"
+              title="Romans 14:14"
+            >
+              <span class="tooltip">Explore Romans 14:14</span>
+            </button>
+
+            <!-- Scripture: Leviticus 3:16 -->
+            <button 
+              type="button"
+              class="hotspot hotspot-leviticus"
+              id="hotspot-leviticus"
+              data-scripture="leviticus"
+              aria-label="Read Leviticus 3:16"
+              title="Leviticus 3:16"
+            >
+              <span class="tooltip">Explore Leviticus 3:16</span>
+            </button>
+
+            <!-- Pillar: Improving Health -->
+            <button 
+              type="button"
+              class="hotspot hotspot-pillar pillar-health"
+              data-pillar="health"
+              aria-label="Pillar: Improving Health"
+              title="Improving Health"
+            >
+              <span class="tooltip">Pillar 1: Improving Health</span>
+            </button>
+
+            <!-- Pillar: Strengthening Faith -->
+            <button 
+              type="button"
+              class="hotspot hotspot-pillar pillar-faith"
+              data-pillar="faith"
+              aria-label="Pillar: Strengthening Faith"
+              title="Strengthening Faith"
+            >
+              <span class="tooltip">Pillar 2: Strengthening Faith</span>
+            </button>
+
+            <!-- Pillar: Growth Through Christ -->
+            <button 
+              type="button"
+              class="hotspot hotspot-pillar pillar-growth"
+              data-pillar="growth"
+              aria-label="Pillar: Growth Through Christ"
+              title="Growth Through Christ"
+            >
+              <span class="tooltip">Pillar 3: Growth Through Christ</span>
+            </button>
+
+            <!-- Pillar: Finding Your Purpose -->
+            <button 
+              type="button"
+              class="hotspot hotspot-pillar pillar-purpose"
+              data-pillar="purpose"
+              aria-label="Pillar: Finding Your Purpose"
+              title="Finding Your Purpose"
+            >
+              <span class="tooltip">Pillar 4: Finding Your Purpose</span>
+            </button>
+
+          </div>
+        </div>
+
+        <div class="artwork-hint">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+          <span>Click any icon, scripture, or email address above to interact</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Platform Links Bar (Mobile-Friendly & Quick Access) -->
+    <section class="platform-bar-section" aria-label="Listen and subscribe links">
+      <div class="section-container">
+        <h2 class="section-title"><span>LISTEN & CONNECT</span></h2>
+        <p class="section-subtitle">Streaming soon on all major platforms. Subscribe now so you never miss an episode.</p>
+        
+        <div class="platform-grid">
+          <!-- YouTube Card -->
+          <a 
+            href="https://www.youtube.com/@imperfectservantpodcast" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="platform-card card-youtube"
+            id="card-youtube"
+          >
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" class="platform-svg" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </div>
+            <div class="card-info">
+              <span class="card-platform">YouTube</span>
+              <span class="card-status">Watch Episodes</span>
+            </div>
+            <span class="card-arrow">→</span>
+          </a>
+
+          <!-- Spotify Card -->
+          <a 
+            href="https://open.spotify.com/search/imperfectservantpodcast" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="platform-card card-spotify"
+            id="card-spotify"
+          >
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" class="platform-svg" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.307a.754.754 0 0 1-1.037.25c-2.836-1.733-6.406-2.126-10.61-1.165a.755.755 0 0 1-.34-1.472c4.604-1.05 8.56-.607 11.737 1.349a.754.754 0 0 1 .25 1.038zm1.467-3.26a.944.944 0 0 1-1.298.312c-3.248-1.996-8.2-2.576-12.043-1.41a.944.944 0 1 1-.55-1.805c4.39-1.332 9.858-.688 13.58 1.603a.944.944 0 0 1 .311 1.3zM19.1 11.2C15.23 8.9 8.85 8.69 5.15 9.81a1.132 1.132 0 1 1-.66-2.164c4.25-1.29 11.3-.99 15.75 1.65a1.132 1.132 0 1 1-1.14 1.954z"/>
+              </svg>
+            </div>
+            <div class="card-info">
+              <span class="card-platform">Spotify</span>
+              <span class="card-status">Listen on Spotify</span>
+            </div>
+            <span class="card-arrow">→</span>
+          </a>
+
+          <!-- Apple Podcasts Card -->
+          <a 
+            href="https://podcasts.apple.com/search?term=imperfectservantpodcast" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="platform-card card-apple"
+            id="card-apple"
+          >
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" class="platform-svg" fill="currentColor">
+                <path d="M5.34 0C5.63.15 5.86.37 6 .68c.88 1.92 1.48 3.93 1.78 6 .15 1.08.15 2.16 0 3.24-.3 2.07-.9 4.08-1.78 6a4.84 4.84 0 0 1-1.12 1.58c-.6.5-1.34.73-2.12.7-.87-.03-1.63-.39-2.2-1.03C-.2 16.27-.08 15.1.8 14.15c.67-.73 1.18-1.57 1.52-2.5.38-1.04.58-2.13.58-3.25 0-1.12-.2-2.21-.58-3.25C1.98 4.22 1.47 3.38.8 2.65-.08 1.7-.2.53.56.03c.8-.52 1.83-.43 2.56.23.47.42.87.91 1.22 1.45.33.51.6 1.05.82 1.61.06.15.12.3.18.45zm13.32 0c.29.15.52.37.66.68.88 1.92 1.48 3.93 1.78 6 .15 1.08.15 2.16 0 3.24-.3 2.07-.9 4.08-1.78 6a4.84 4.84 0 0 1-1.12 1.58c-.6.5-1.34.73-2.12.7-.87-.03-1.63-.39-2.2-1.03-.76-.9-.64-2.07.24-3.02.67-.73 1.18-1.57 1.52-2.5.38-1.04.58-2.13.58-3.25 0-1.12-.2-2.21-.58-3.25-.34-.93-.85-1.77-1.52-2.5-.88-.95-1-2.12-.24-3.02.8-.52 1.83-.43 2.56.23.47.42.87.91 1.22 1.45.33.51.6 1.05.82 1.61.06.15.12.3.18.45zM12 6.5a4.5 4.5 0 0 1 4.5 4.5c0 1.97-1.28 3.65-3.08 4.24v5.26a1.42 1.42 0 1 1-2.84 0v-5.26A4.502 4.502 0 0 1 7.5 11a4.5 4.5 0 0 1 4.5-4.5z"/>
+              </svg>
+            </div>
+            <div class="card-info">
+              <span class="card-platform">Apple Podcasts</span>
+              <span class="card-status">Listen on Apple</span>
+            </div>
+            <span class="card-arrow">→</span>
+          </a>
+
+          <!-- iHeartRadio Card -->
+          <a 
+            href="https://www.iheart.com/search/?q=imperfect%20servant%20podcast" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="platform-card card-iheart"
+            id="card-iheart"
+          >
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" class="platform-svg" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <div class="card-info">
+              <span class="card-platform">iHeartRadio</span>
+              <span class="card-status">Stream Free</span>
+            </div>
+            <span class="card-arrow">→</span>
+          </a>
+
+          <!-- Email The Show Card -->
+          <button 
+            type="button"
+            class="platform-card card-email"
+            id="card-email"
+            data-action="copy-email"
+          >
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" class="platform-svg" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </div>
+            <div class="card-info">
+              <span class="card-platform">Email The Show</span>
+              <span class="card-status" id="email-card-text">imperfectservantpodcast@gmail.com</span>
+            </div>
+            <span class="card-badge-copy">Copy</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audio Teaser & Mission Section -->
+    <section class="mission-section">
+      <div class="section-container mission-grid">
+        
+        <!-- Interactive Teaser Audio Player Card -->
+        <div class="glass-card teaser-card">
+          <div class="card-header">
+            <span class="badge-gold">TRAILER PREVIEW</span>
+            <span class="release-tag">Coming Soon</span>
+          </div>
+          
+          <h3 class="teaser-title">The Heart Behind Imperfect Servant</h3>
+          <p class="teaser-desc">
+            A raw, Christ-centered conversation bridging physical fitness, spiritual discipline, and divine purpose for imperfect believers.
+          </p>
+          
+          <!-- Custom Gold Audio Waveform Player -->
+          <div class="audio-player-box">
+            <button id="audio-play-btn" class="play-btn" aria-label="Play Trailer Teaser">
+              <svg id="play-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <svg id="pause-svg" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+              </svg>
+            </button>
+            
+            <div class="waveform-container" id="waveform">
+              <!-- Animated Wave Bars -->
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+              <span class="wave-bar"></span>
+            </div>
+
+            <div class="player-meta">
+              <span id="player-timer">0:00 / 1:14</span>
+              <span class="sample-label">Teaser</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Four Pillars Card -->
+        <div class="glass-card pillars-card">
+          <div class="card-header">
+            <span class="badge-gold">OUR FOUNDATION</span>
+          </div>
+          <h3 class="teaser-title">The Four Pillars</h3>
+          
+          <div class="pillars-list">
+            <div class="pillar-item" data-pillar="health">
+              <div class="pillar-num">01</div>
+              <div class="pillar-content">
+                <h4>Improving Health</h4>
+                <p>Honoring God with our bodies as living sacrifices and temples of the Holy Spirit.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item" data-pillar="faith">
+              <div class="pillar-num">02</div>
+              <div class="pillar-content">
+                <h4>Strengthening Faith</h4>
+                <p>Building unshakable spiritual resilience through daily prayer and Scripture.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item" data-pillar="growth">
+              <div class="pillar-num">03</div>
+              <div class="pillar-content">
+                <h4>Growth Through Christ</h4>
+                <p>Embracing our brokenness so Christ’s strength is perfected in our weakness.</p>
+              </div>
+            </div>
+
+            <div class="pillar-item" data-pillar="purpose">
+              <div class="pillar-num">04</div>
+              <div class="pillar-content">
+                <h4>Finding Your Purpose</h4>
+                <p>Discovering God’s unique calling and serving His Kingdom with passion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Email Notification / Guest Inquiry Form -->
+    <section class="connect-section">
+      <div class="section-container">
+        <div class="glass-card connect-box">
+          <div class="connect-text">
+            <span class="badge-gold">BE PART OF THE JOURNEY</span>
+            <h2>Have a story or question for the show?</h2>
+            <p>Reach out directly to the host or submit guest suggestions. We read every email from our listeners.</p>
+          </div>
+          
+          <div class="connect-actions">
+            <a href="mailto:imperfectservantpodcast@gmail.com" class="btn-gold-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <span>Email The Show Directly</span>
+            </a>
+            <button class="btn-gold-secondary" id="btn-copy-email-action" data-action="copy-email">
+              <span>Copy imperfectservantpodcast@gmail.com</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripture & Info Modal -->
+  <div id="modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button id="modal-close-btn" class="modal-close" aria-label="Close modal">×</button>
+      <div class="modal-gold-accent"></div>
+      <div class="modal-body">
+        <span id="modal-tag" class="badge-gold">SCRIPTURE SPOTLIGHT</span>
+        <h3 id="modal-title">Romans 14:14</h3>
+        <blockquote id="modal-quote" class="scripture-quote">
+          "I know and am convinced by the Lord Jesus that there is nothing unclean of itself; but to him who considers anything to be unclean, to him it is unclean."
+        </blockquote>
+        <div id="modal-commentary" class="modal-text">
+          A powerful reminder that walking in faith requires grace, a cleansed conscience, and deep conviction before the Lord.
+        </div>
+        <div class="modal-footer">
+          <button id="modal-action-btn" class="btn-gold-primary">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span id="toast-message">Email address copied to clipboard!</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-motto">“Not perfect. Just willing. Improving the health of God’s children.”</p>
+      <p class="footer-copyright">
+        © <span id="current-year">2026</span> Imperfect Servant Podcast. All Rights Reserved.
+      </p>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/@imperfectservantpodcast" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <span>•</span>
+        <a href="https://open.spotify.com/search/imperfectservantpodcast" target="_blank" rel="noopener noreferrer">Spotify</a>
+        <span>•</span>
+        <a href="https://podcasts.apple.com/search?term=imperfectservantpodcast" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
+        <span>•</span>
+        <a href="https://www.iheart.com/search/?q=imperfect%20servant%20podcast" target="_blank" rel="noopener noreferrer">iHeartRadio</a>
+        <span>•</span>
+        <a href="mailto:imperfectservantpodcast@gmail.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
