@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // REAL AUDIO TRAILER PLAYER (The Staircase w-music - emotional ambient.mp3)
+  // REAL AUDIO TRAILER PLAYER (trailer.mp3)
   // =========================================================================
   const teaserAudio = document.getElementById('teaser-audio');
 
