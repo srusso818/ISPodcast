@@ -240,45 +240,32 @@ body {
   justify-content: center;
 }
 
-/* Subtle idle pulse ring on key icons */
+/* Hotspots have completely invisible boundaries to keep artwork pristine */
 .hotspot-ping {
-  position: absolute;
-  inset: -3px;
-  border-radius: inherit;
-  border: 1.5px solid rgba(242, 192, 55, 0.6);
-  opacity: 0;
-  animation: hotspot-glow 3s infinite ease-in-out;
-  pointer-events: none;
+  display: none !important;
 }
 
-@keyframes hotspot-glow {
-  0%, 100% { opacity: 0; transform: scale(0.95); }
-  50% { opacity: 0.8; transform: scale(1.08); box-shadow: 0 0 12px rgba(242, 192, 55, 0.5); }
-}
-
-/* Hover & Focus State on Hotspots */
+/* Hover & Focus State on Hotspots - No glowing outline, pristine artwork */
 .hotspot:hover,
 .hotspot:focus-visible {
-  border: 2px solid rgba(255, 230, 133, 0.95);
-  background: radial-gradient(circle, rgba(242, 192, 55, 0.28) 0%, rgba(184, 134, 11, 0.1) 70%, transparent 100%);
-  box-shadow: 
-    0 0 25px rgba(242, 192, 55, 0.7),
-    inset 0 0 15px rgba(255, 235, 150, 0.45);
-  transform: scale(1.03);
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
   z-index: 15;
 }
 
 /* Tooltips */
 .hotspot .tooltip {
   position: absolute;
-  bottom: calc(100% + 8px);
+  bottom: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%) translateY(4px);
   background: rgba(6, 12, 22, 0.95);
   border: 1px solid var(--gold-bright);
   color: var(--gold-bright);
-  padding: 0.4rem 0.75rem;
-  font-size: 0.75rem;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   font-family: var(--font-body);
   white-space: nowrap;
@@ -287,8 +274,8 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(242, 192, 55, 0.3);
-  z-index: 30;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85), 0 0 12px rgba(242, 192, 55, 0.35);
+  z-index: 50;
 }
 
 .hotspot:hover .tooltip,
@@ -298,45 +285,40 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Exact Coordinates Matching 1536 x 1024 Artwork */
+/* Generous Hit Areas Across the Bottom Bar */
 .hotspot-youtube {
-  left: 2.1%;
-  top: 86.6%;
-  width: 4.6%;
-  height: 7.4%;
-  border-radius: 12px;
+  left: 1.5%;
+  top: 86.0%;
+  width: 5.2%;
+  height: 9.8%;
 }
 
 .hotspot-spotify {
-  left: 7.2%;
-  top: 86.6%;
-  width: 4.0%;
-  height: 7.4%;
-  border-radius: 50%;
+  left: 6.8%;
+  top: 86.0%;
+  width: 4.8%;
+  height: 9.8%;
 }
 
 .hotspot-apple {
-  left: 11.9%;
-  top: 86.6%;
-  width: 4.0%;
-  height: 7.4%;
-  border-radius: 50%;
+  left: 11.5%;
+  top: 86.0%;
+  width: 4.8%;
+  height: 9.8%;
 }
 
 .hotspot-iheart {
-  left: 16.5%;
-  top: 86.6%;
-  width: 4.6%;
-  height: 7.4%;
-  border-radius: 12px;
+  left: 16.3%;
+  top: 86.0%;
+  width: 5.4%;
+  height: 9.8%;
 }
 
 .hotspot-handle {
-  left: 22.8%;
-  top: 87.2%;
-  width: 15.6%;
-  height: 6.4%;
-  border-radius: 6px;
+  left: 22.5%;
+  top: 86.0%;
+  width: 15.5%;
+  height: 9.8%;
 }
 
 .hotspot-badge {
@@ -344,23 +326,20 @@ body {
   top: 72.0%;
   width: 31.0%;
   height: 23.5%;
-  border-radius: 18px;
 }
 
 .hotspot-email-text {
-  left: 68.2%;
-  top: 86.2%;
+  left: 68.0%;
+  top: 86.0%;
   width: 24.0%;
-  height: 7.8%;
-  border-radius: 8px;
+  height: 9.8%;
 }
 
 .hotspot-email-icon {
-  left: 92.8%;
-  top: 86.6%;
-  width: 4.8%;
-  height: 7.4%;
-  border-radius: 10px;
+  left: 92.2%;
+  top: 86.0%;
+  width: 5.4%;
+  height: 9.8%;
 }
 
 /* Scripture Tags Hotspots (Top) */
