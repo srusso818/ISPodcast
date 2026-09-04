@@ -399,4 +399,114 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderParticles();
   }
+
+  // =========================================================================
+  // AUTOMATED EPISODES FEED (Live sync with Spotify / RSS)
+  // =========================================================================
+  const RSS_FEED_URL = 'https://anchor.fm/s/116179d20/podcast/rss';
+  const SPOTIFY_SHOW_URL = 'https://open.spotify.com/show/0347HogZFHvFF3vYagjIBq';
+  const episodesListContainer = document.getElementById('episodes-list');
+
+  async function loadLatestEpisodes() {
+    if (!episodesListContainer) return;
+
+    try {
+      // Primary fetch via rss2json
+      const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_FEED_URL)}`;
+      const response = await fetch(apiUrl);
+      if (!response.ok) throw new Error('RSS response not ok');
+      const data = await response.json();
+
+      if (data && data.status === 'ok' && Array.isArray(data.items) && data.items.length > 0) {
+        renderEpisodes(data.items.slice(0, 5));
+        return;
+      }
+    } catch (err) {
+      console.warn('Primary RSS fetch failed, checking iTunes backup:', err);
+    }
+
+    try {
+      // Backup fetch via Apple iTunes API
+      const itunesUrl = 'https://itunes.apple.com/lookup?id=6802761640&entity=podcastEpisode&limit=6';
+      const itunesRes = await fetch(itunesUrl);
+      if (itunesRes.ok) {
+        const itunesData = await itunesRes.json();
+        if (itunesData && itunesData.results && itunesData.results.length > 1) {
+          const episodes = itunesData.results.slice(1).map(ep => ({
+            title: ep.trackName,
+            pubDate: ep.releaseDate,
+            link: SPOTIFY_SHOW_URL,
+            enclosure: { duration: Math.round((ep.trackTimeMillis || 0) / 1000) }
+          }));
+          renderEpisodes(episodes.slice(0, 5));
+        }
+      }
+    } catch (itunesErr) {
+      console.warn('iTunes episode fetch failed:', itunesErr);
+    }
+  }
+
+  function renderEpisodes(episodes) {
+    if (!episodesListContainer || !episodes || episodes.length === 0) return;
+
+    episodesListContainer.innerHTML = episodes.map(ep => {
+      // Format Date
+      let dateStr = '';
+      if (ep.pubDate) {
+        const d = new Date(ep.pubDate);
+        if (!isNaN(d.getTime())) {
+          dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        }
+      }
+
+      // Format Duration
+      let durStr = '';
+      if (ep.enclosure && ep.enclosure.duration) {
+        const sec = parseInt(ep.enclosure.duration, 10);
+        if (!isNaN(sec) && sec > 0) {
+          const mins = Math.floor(sec / 60);
+          durStr = `${mins} min`;
+        }
+      } else if (typeof ep.duration === 'string') {
+        durStr = ep.duration;
+      }
+
+      // Clean Title
+      const title = (ep.title || 'Untitled Episode').replace(/<[^>]*>?/gm, '');
+
+      // Episode Link (prefer direct Spotify link, fallback to show link)
+      const link = (ep.link && ep.link.includes('spotify.com')) ? ep.link : SPOTIFY_SHOW_URL;
+
+      return `
+        <div class="episode-item">
+          <div class="episode-info">
+            <div class="episode-meta">
+              ${dateStr ? `<span class="episode-date">${dateStr}</span>` : ''}
+              ${dateStr && durStr ? `<span class="episode-dot">•</span>` : ''}
+              ${durStr ? `<span class="episode-duration">${durStr}</span>` : ''}
+            </div>
+            <h4 class="episode-title">${escapeHtml(title)}</h4>
+          </div>
+          <a href="${link}" target="_blank" rel="noopener noreferrer" class="episode-spotify-btn" aria-label="Listen to ${escapeHtml(title)} on Spotify">
+            <svg viewBox="0 0 24 24" class="spotify-mini-svg" fill="currentColor">
+              <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.307a.754.754 0 0 1-1.037.25c-2.836-1.733-6.406-2.126-10.61-1.165a.755.755 0 0 1-.34-1.472c4.604-1.05 8.56-.607 11.737 1.349a.754.754 0 0 1 .25 1.038zm1.467-3.26a.944.944 0 0 1-1.298.312c-3.248-1.996-8.2-2.576-12.043-1.41a.944.944 0 1 1-.55-1.805c4.39-1.332 9.858-.688 13.58 1.603a.944.944 0 0 1 .311 1.3zM19.1 11.2C15.23 8.9 8.85 8.69 5.15 9.81a1.132 1.132 0 1 1-.66-2.164c4.25-1.29 11.3-.99 15.75 1.65a1.132 1.132 0 1 1-1.14 1.954z"/>
+            </svg>
+            <span>Listen</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  loadLatestEpisodes();
 });

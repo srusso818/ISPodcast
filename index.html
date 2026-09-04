@@ -414,6 +414,44 @@
               <span class="sample-label">Preview</span>
             </div>
           </div>
+
+          <!-- Latest Episodes Feed (Auto-updating from Spotify / RSS) -->
+          <div class="episodes-feed-section">
+            <div class="episodes-feed-header">
+              <div class="feed-title-wrap">
+                <span class="badge-gold feed-badge">LATEST EPISODES</span>
+                <span class="feed-pulse-indicator" title="Auto-syncing with Spotify RSS feed">
+                  <span class="pulse-dot"></span>
+                  <span class="pulse-label">Live Feed</span>
+                </span>
+              </div>
+              <a href="https://open.spotify.com/show/0347HogZFHvFF3vYagjIBq" target="_blank" rel="noopener noreferrer" class="feed-spotify-link" title="Open Spotify Show Page">
+                <span>View on Spotify</span>
+                <span class="feed-arrow">→</span>
+              </a>
+            </div>
+
+            <div class="episodes-list" id="episodes-list">
+              <!-- Initial static fallback so content renders immediately before JS fetch -->
+              <div class="episode-item">
+                <div class="episode-info">
+                  <div class="episode-meta">
+                    <span class="episode-date">Aug 15, 2026</span>
+                    <span class="episode-dot">•</span>
+                    <span class="episode-duration">4 min</span>
+                  </div>
+                  <h4 class="episode-title">Coming Soon...</h4>
+                </div>
+                <a href="https://podcasters.spotify.com/pod/show/donato-russo4/episodes/Coming-Soon-e3ner1h" target="_blank" rel="noopener noreferrer" class="episode-spotify-btn" aria-label="Listen to Coming Soon... on Spotify">
+                  <svg viewBox="0 0 24 24" class="spotify-mini-svg" fill="currentColor">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.498 17.307a.754.754 0 0 1-1.037.25c-2.836-1.733-6.406-2.126-10.61-1.165a.755.755 0 0 1-.34-1.472c4.604-1.05 8.56-.607 11.737 1.349a.754.754 0 0 1 .25 1.038zm1.467-3.26a.944.944 0 0 1-1.298.312c-3.248-1.996-8.2-2.576-12.043-1.41a.944.944 0 1 1-.55-1.805c4.39-1.332 9.858-.688 13.58 1.603a.944.944 0 0 1 .311 1.3zM19.1 11.2C15.23 8.9 8.85 8.69 5.15 9.81a1.132 1.132 0 1 1-.66-2.164c4.25-1.29 11.3-.99 15.75 1.65a1.132 1.132 0 1 1-1.14 1.954z"/>
+                  </svg>
+                  <span>Listen</span>
+                  <span class="btn-arrow">→</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Four Pillars Card -->
