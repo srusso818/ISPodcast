@@ -991,30 +991,34 @@ body {
 
 .footer-motto {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
   color: var(--gold-text, #f5cf6d);
   letter-spacing: 0.05em;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.95rem;
 }
 
 .footer-copyright {
-  font-size: 0.82rem;
+  font-size: 0.98rem;
+  line-height: 1.5;
   color: var(--text-muted);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1.2rem;
   flex-wrap: wrap;
 }
 
 .footer-links a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.82rem;
+  font-size: 0.98rem;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
@@ -1023,7 +1027,66 @@ body {
 }
 
 .footer-links span {
-  color: rgba(212, 160, 23, 0.4);
+  color: rgba(212, 160, 23, 0.45);
+  font-size: 0.95rem;
+}
+
+/* Provider Promotion */
+.footer-powered {
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(212, 160, 23, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.powered-by-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.95rem;
+  text-decoration: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(242, 192, 55, 0.2);
+  opacity: 0.9;
+  transition: all 0.25s ease;
+}
+
+.powered-by-link:hover {
+  opacity: 1;
+  background: rgba(242, 192, 55, 0.08);
+  border-color: rgba(242, 192, 55, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 0 20px rgba(242, 192, 55, 0.2);
+}
+
+.powered-by-label {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.25s ease;
+}
+
+.powered-by-link:hover .powered-by-label {
+  color: var(--gold-bright);
+}
+
+.powered-by-logo {
+  height: 34px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.powered-by-link:hover .powered-by-logo {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
 }
 
 /* Helpers */
