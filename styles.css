@@ -441,14 +441,14 @@ body {
 
 .platform-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
 }
 
 .platform-card {
   display: flex;
   align-items: center;
-  padding: 1.1rem 1.25rem;
+  padding: 0.95rem 1rem;
   background: var(--bg-card);
   border: 1px solid rgba(212, 160, 23, 0.35);
   border-radius: var(--radius-md);
@@ -484,16 +484,16 @@ body {
 }
 
 .card-icon-wrap {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
   background: rgba(242, 192, 55, 0.1);
   border: 1px solid rgba(242, 192, 55, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--gold-primary);
-  margin-right: 1rem;
+  margin-right: 0.75rem;
   flex-shrink: 0;
   transition: var(--transition-smooth);
 }
@@ -505,8 +505,8 @@ body {
 }
 
 .platform-svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
 }
 
 .card-info {
@@ -518,14 +518,14 @@ body {
 
 .card-platform {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-main);
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
 .card-status {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   color: var(--gold-text, #f5cf6d);
   white-space: nowrap;
   overflow: hidden;
@@ -534,8 +534,8 @@ body {
 
 .card-arrow {
   color: var(--gold-primary);
-  font-size: 1.2rem;
-  margin-left: 0.4rem;
+  font-size: 1.1rem;
+  margin-left: 0.3rem;
   flex-shrink: 0;
   transition: transform 0.2s ease;
 }
