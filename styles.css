@@ -1472,7 +1472,7 @@ body {
     font-size: 0.7rem;
   }
 
-  .card-email {
+  .card-downloads {
     grid-column: span 2;
   }
 
@@ -1491,7 +1491,7 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .card-email {
+  .card-downloads {
     grid-column: span 1;
   }
 
